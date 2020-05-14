@@ -1,13 +1,26 @@
-> docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
-> docker start gostack_postgres
+## Desafio 6 - GoStack Rocketseat
 
-## Migrations
+#### Como rodar
 
-- Criar migrations
-  > yarn typeorm migration:create -n CreateAppointments
-- Rodar
+- Crie uma instância do postgres com o docker
+
+  > docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+  > docker start gostack_postgres
+
+- Crie o banco de dados com o nome 'gostack_desafio06'
+
+- Rode as migrations
+
   > yarn typeorm migration:run
-- Desfazer
-  > yarn typeorm migration:revert
-- Mostar as migration que já executaram
-  > yarn typeorm migration:show
+
+- Inicie o servidor
+
+  > yarn dev:server
+
+- Teste as rotas com o arquivo 'collection.json' anexado na raiz deste projeto
+
+#### Rodando os testes
+
+- Crie o banco de dados com o nome 'gostack_desafio06_tests'
+- Rode os testes
+  > yarn test
